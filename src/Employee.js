@@ -114,7 +114,7 @@ const Employee = () => {
         </thead>
         <tbody>
           {employee.employeeData
-            .filter((value) => value.empName) // Filter out empty objects
+            .filter((value) => value.empName) // For the first object: value.empName is "" (an empty string). An empty string is considered false in JavaScript. So, the first whole 0th index object will be removed.
             .map((value, index) => (
               <tr key={index}>
                 <td style={tdStyle}>{index + 1}</td>
